@@ -1,0 +1,43 @@
+grad_args:
+  grad_sample_range: 100
+  grad_weight_type: 'uniform'
+  grad_guidance_0: 1.0
+  grad_guidance_1: 1.0
+  grad_sample_type: 'back_n_forward_sample'
+  grad_batch_size: 10
+output_args:
+  cfg_sample: 1
+  eta: 0.0
+  out_dir: 'results/female2male'
+  output_psample: True
+  output_image_num: 17
+  output_start_images: True
+  output_opt_points: True
+  output_reconstruct_end: True
+  output_separate_images: True
+  use_neg_prompt_io: False
+  out_interval: -1
+bisect_args:
+  max_strength: 4
+  bisect_interval: 100
+  random_end: False
+  only_new_points: False
+opt_args:
+  lr: 0.1
+  iter_num: 400
+  lr_scheduler: 'linear'
+  lr_divide: True
+tv_args:
+  tv_lr: 0.005
+  tv_steps: 500
+  tv_batch_size: 2 
+  tv_ckpt_folder: 'tv_ckpt_sd2-1'
+noise_level: 0.7
+use_lerp_cond: True
+alpha: 0.002
+sphere_constraint: True
+grad_analysis_out: True 
+promptA: 'a beautiful woman'
+promptB: 'a handsome man'
+pathA: 'assets/fm25_0.png'
+pathB: 'assets/m25_1.png'

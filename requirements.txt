@@ -1,0 +1,11 @@
+numpy
+pillow
+diffusers
+transformers
+scipy
+seaborn
+scikit-learn
+git+https://github.com/patrick-kidger/torchcubicspline.git
+accelerate
+lpips
+yaml
