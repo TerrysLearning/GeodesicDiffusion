@@ -24,7 +24,7 @@ python test_bvp.py --c configs/config_example.yaml
 add the geodesic analysis file
 add the ivp test file
 
-## Introduction
+## Overview
 
 This project explores an interesting idea: using an image generation model to create short videos. 
 
