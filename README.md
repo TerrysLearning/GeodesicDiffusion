@@ -28,7 +28,7 @@ add the ivp test file
 
 ## Overview
 
-This project explores an interesting idea: using an image generation model to create short videos. 
+This project explores an interesting idea: using an image generation model to create short videos in a training-free manner. 
 
 By connecting individual frames, a video can be interpreted as a continuous path through the model's latent space. If this path is a straight line, it may pass through low-probability regions, resulting in poor-quality frames. To address this, we aim for the path to traverse high-probability density regions where the model generates more plausible images.
 
@@ -39,7 +39,7 @@ We implemented this method in a training-free manner using the pre-trained Stabl
 
 The theoretical foundation can be traced back to Fermat’s principle([wiki](https://en.wikipedia.org/wiki/Fermat%27s_principle)): light traveling through a medium distribution follows the path of least time. Similarly, we seek generation paths that avoid “resistant” low-probability regions and instead follow “efficient” routes through high-probability areas—resulting in higher-quality frames and smoother temporal transitions.
 
-这个项目提供了一个比较有趣的思路：如何利用图像生成模型来生成短视频。
+这个项目提供了一个比较有趣的思路：如何不做任何训练利用图像生成模型来生成短视频。
 
 将每一帧连接起来，视频可以看作是图像生成空间中的一条路径。如果这条路径是直线，可能会经过生成质量较差的区域。因此，我们希望路径能穿过生成模型中的高概率密度区域。
 
