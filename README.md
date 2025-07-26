@@ -1,4 +1,6 @@
-## Probability Density Geodesics <br> in Image Diffusion Latent Space (CVPR2025)
+<p align='center'>
+  # Probability Density Geodesics <br> in Image Diffusion Latent Space (CVPR2025)
+</p>
 
 <p align="center">
   <a href='https://arxiv.org/pdf/2504.06675'>
