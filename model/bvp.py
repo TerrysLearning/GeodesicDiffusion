@@ -39,7 +39,6 @@ class Geodesic_BVP(Score_Distillation,
                    Ouput_Grad):
     def __init__(self, 
             pipe: SimpleDiffusionPipeline, 
-            test_name, 
             imgA, 
             imgB, 
             promptA,
@@ -55,7 +54,9 @@ class Geodesic_BVP(Score_Distillation,
             spline_type='spherical_cubic', 
             grad_analysis_out=True, 
             use_lerp_cond =False, 
-            sphere_constraint = True
+            sphere_constraint = True, 
+            test_name = 'test_bvp', 
+            **kwargs
             ):
         self.imgA = imgA
         self.imgB = imgB

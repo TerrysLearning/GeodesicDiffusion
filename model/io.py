@@ -34,9 +34,9 @@ class IO():
                 prompt_cfg = torch.cat([self.embed_uncond, embed_cond])
                 if self.use_neg_prompt_io:
                     prompt_cfg = torch.cat([self.embed_uncond, embed_cond-self.embed_neg])
-                lat = self.pipe.latent_forward_ode(lat, prompt_cfg, self.noise_level, guidance_scale=self.cfg_sample)
+                lat = self.pipe.latent_forward_inversion(lat, prompt_cfg, self.noise_level, guidance_scale=self.cfg_sample)
             else:
-                lat = self.pipe.latent_forward_ode(lat, self.embed_uncond, self.noise_level, guidance_scale=0)
+                lat = self.pipe.latent_forward_inversion(lat, self.embed_uncond, self.noise_level, guidance_scale=0)
         return lat
     
     def backward_single(self, lat, embed_cond):

@@ -89,7 +89,7 @@ class SimpleDiffusionPipeline(StableDiffusionPipeline):
             latent = self.scheduler.step(noise_pred, t, latent, **extra_step_kwargs).prev_sample 
         return latent 
 
-    def latent_forward_ode(self, latent, prompt_embed, noise_level=1, guidance_scale=0): 
+    def latent_forward_inversion(self, latent, prompt_embed, noise_level=1, guidance_scale=0): 
         assert (guidance_scale > 0 and prompt_embed.shape[0] == 2*latent.shape[0]) \
             or (guidance_scale == 0 and prompt_embed.shape[0] == latent.shape[0])
         time_steps = self.get_t(noise_level)
@@ -142,7 +142,6 @@ class SimpleDiffusionPipeline(StableDiffusionPipeline):
         noise_pred = self.unet(latent_model_input, t, encoder_hidden_states=prompt_embed).sample
         noise_pred_uncond, noise_pred_cond = noise_pred.chunk(2)
         noise_pred = noise_pred_uncond + guidance_scale * (noise_pred_cond - noise_pred_uncond)  
-        save_to_npy(noise_pred_cond - noise_pred_uncond) #/////
         return noise_pred
 
     def noise_pred(self, latent, t, prompt_embed):
@@ -162,13 +161,6 @@ class SimpleDiffusionPipeline(StableDiffusionPipeline):
             return t
         return time_steps[-time_stamp:]
         
-
-def save_to_npy(vector):
-    filename = 'temp_data0.npy'
-    data = np.load(filename, allow_pickle=True).tolist()
-    data.append(vector.reshape(-1).cpu().numpy())
-    data = np.array(data)
-    np.save(filename, data)
 
 
 def load_pipe(device='cuda'):
