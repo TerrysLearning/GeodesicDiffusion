@@ -11,7 +11,7 @@ if __name__ == '__main__':
     args = args.parse_args()
     pipe = load_pipe('cuda:0')
 
-    config_bvp = yaml.safe_load(open(args.config_file))
+    config_bvp = yaml.safe_load(open(args.c))
     
     if not os.path.exists('results'):
         os.mkdir('results/')
@@ -20,7 +20,7 @@ if __name__ == '__main__':
     if os.path.exists(out_dir):
         shutil.rmtree(out_dir)
     os.mkdir(out_dir)
-    shutil.copy(args.config_file, out_dir)
+    shutil.copy(args.c, out_dir)
 
     imgA = Image.open(config_bvp['pathA'])
     imgB = Image.open(config_bvp['pathB'])

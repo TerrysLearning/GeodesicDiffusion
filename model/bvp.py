@@ -153,7 +153,7 @@ class Geodesic_BVP(Score_Distillation,
         cur_lr = self.get_learning_rate(self.cur_iter, t_opt)
         control_t = t_opt.detach().cpu().numpy()
         if self.cur_iter % 5 == 0:
-            print('optimise {} t={} iteration: {}, loss: {}, angle: {}'.format(
+            print('optimise {} t={} iteration: {}, grad_norm: {}, angle: {}'.format(
                         self.test_name, control_t, self.cur_iter, g_n, g_angle))
         
         X_opt = X_opt - cur_lr * grad 

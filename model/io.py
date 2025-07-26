@@ -11,7 +11,7 @@ class IO():
             cfg_sample=0.5,
             noise_level=0.0,
             eta=0.0,
-            use_neg_prompt_io = False
+            use_neg_prompt = False
            ):
         self.pipe = pipe
         self.device = str(pipe.device)
@@ -19,7 +19,7 @@ class IO():
         self.cfg_sample = cfg_sample
         self.eta = eta
         self.embed_uncond = pipe.prompt2embed('')
-        self.use_neg_prompt_io = use_neg_prompt_io
+        self.use_neg_prompt = use_neg_prompt
         self.embed_neg = pipe.prompt2embed('A doubling image, unrealistic, artifacts, distortions, unnatural blending, ghosting effects,\
             overlapping edges, harsh transitions, motion blur, poor resolution, low detail')
         
@@ -32,8 +32,8 @@ class IO():
         if self.noise_level > 0:
             if self.cfg_sample>0:
                 prompt_cfg = torch.cat([self.embed_uncond, embed_cond])
-                if self.use_neg_prompt_io:
-                    prompt_cfg = torch.cat([self.embed_uncond, embed_cond-self.embed_neg])
+                # if self.use_neg_prompt:
+                #     prompt_cfg = torch.cat([self.embed_uncond, embed_cond-self.embed_neg])
                 lat = self.pipe.latent_forward_inversion(lat, prompt_cfg, self.noise_level, guidance_scale=self.cfg_sample)
             else:
                 lat = self.pipe.latent_forward_inversion(lat, self.embed_uncond, self.noise_level, guidance_scale=0)
@@ -43,7 +43,7 @@ class IO():
         if self.noise_level > 0:
             if self.cfg_sample>0:
                 prompt_cfg = torch.cat([self.embed_uncond, embed_cond])
-                if self.use_neg_prompt_io:
+                if self.use_neg_prompt:
                     prompt_cfg = torch.cat([self.embed_uncond, embed_cond-self.embed_neg])
                 lat = self.pipe.latent_backward(lat, prompt_cfg, self.noise_level, guidance_scale=self.cfg_sample, eta=self.eta)
             else:
@@ -81,12 +81,12 @@ class BVP_IO(IO):
             output_opt_points=False,
             output_reconstruct_end=False,
             output_separate_images=True,
-            use_neg_prompt_io = False,
+            use_neg_prompt = False,
             out_interval=-1, 
             use_lerp_cond = False,
             imgA=None,
             imgB=None):
-        super().__init__(pipe, cfg_sample, noise_level, eta, use_neg_prompt_io)
+        super().__init__(pipe, cfg_sample, noise_level, eta, use_neg_prompt)
         self.out_dir = out_dir
         self.output_psample = output_psample
         self.output_image_num = output_image_num
@@ -156,6 +156,12 @@ class BVP_IO(IO):
         check2 = iter % self.out_interval == 0 and self.out_interval > 0 and iter > 0
         check3 = out_name == 'final'
         if check1 or check2 or check3:
+            if check1:
+                print('Output start images')
+            if check2:
+                print(f'Output image sequence at iteration {iter}')
+            if check3:
+                print('Output final image sequence')
             return self.save_bvp_sequence(spline, out_name=out_name, **embed_cond_args)
         return None 
 
