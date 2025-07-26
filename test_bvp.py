@@ -6,7 +6,7 @@ import argparse
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
-    args.add_argument('--config_file', type=str, default='configs/config_example.yaml')
+    args.add_argument('--c', type=str, default='configs/config_example.yaml')
 
     args = args.parse_args()
     pipe = load_pipe('cuda:0')

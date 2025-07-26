@@ -3,22 +3,15 @@ Offical implementation for "Probability Density Geodesics in Image Diffusion Lat
 
 ## Test the code
 
+Create the environment
 ```bash
 conda create -n geodesicdiff python=3.12.4
 conda activate geodesicdiff
-```
-
-Then install the required dependencies:
-
-```bash
 pip install -r requirements.txt
 ```
 
-## Usage
-
 To run the main script, use:
-
 ```bash
-python main.py --config configs/your_config.yaml
+python test_bvp.py --c configs/config_example.yaml
 ```
-```
+
