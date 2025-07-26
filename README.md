@@ -1,5 +1,7 @@
 # GeodesicDiffusion
 Offical implementation for "Probability Density Geodesics in Image Diffusion Latent Space" (CVPR2025)
+[![arXiv](https://arxiv.org/pdf/2504.06675)](#)
+[![Video](https://www.youtube.com/watch?v=r65VFu1sa2E)](#)
 
 ## Test the code
 Create the environment
