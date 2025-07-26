@@ -1,7 +1,13 @@
 # GeodesicDiffusion
 Offical implementation for "Probability Density Geodesics in Image Diffusion Latent Space" (CVPR2025)
-[![arXiv](https://arxiv.org/pdf/2504.06675)](#)
-[![Video](https://www.youtube.com/watch?v=r65VFu1sa2E)](#)
+<!-- [![arXiv](https://arxiv.org/pdf/2504.06675)](#)
+[![Video](https://www.youtube.com/watch?v=r65VFu1sa2E)](#) -->
+<p align="center">
+  <a href='https://arxiv.org/pdf/2504.06675'>
+  <img src='https://img.shields.io/badge/Arxiv-2502.01051-A42C25?style=flat&logo=arXiv&logoColor=A42C25'></a> 
+  <a href='https://www.youtube.com/watch?v=r65VFu1sa2E)'>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=casiatao.LPO&left_color=gray&right_color=%2342b983"></a> 
+</p>
 
 ## Test the code
 Create the environment
