@@ -47,3 +47,14 @@ The theoretical foundation can be traced back to Fermat’s principle([wiki](htt
 
 文章的理论的基础可以追溯到费马原理([wiki](https://en.wikipedia.org/wiki/Fermat%27s_principle))，光在一个介质分布中传播时会选择一条使传播时间最短的路径。类似地，我们希望图像生成过程中的路径避开“阻力大”的低概率区域，沿着“通畅”的高概率区域前进，从而生成质量更高、变化更平滑的视频帧。
 
+## Citation
+```bibtex
+@inproceedings{yu2025probability,
+  title={Probability density geodesics in image diffusion latent space},
+  author={Yu, Qingtao and Singh, Jaskirat and Yang, Zhaoyuan and Tu, Peter Henry and Zhang, Jing and Li, Hongdong and Hartley, Richard and Campbell, Dylan},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={27989--27998},
+  year={2025}
+}
+```
+
