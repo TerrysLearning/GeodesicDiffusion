@@ -2,9 +2,12 @@ from model.utils import *
 from torchcubicspline import(natural_cubic_spline_coeffs, 
                              NaturalCubicSpline)
 
+'We implement the spline class to compute the derivative or second derivative of a piecewise function'
+'The cubic spline choice might not be the best choice'
+
 class Spline():
     def __init__(self, spline_type='spherical'):
-        assert spline_type in ['cubic', 'spherical', 'spherical_cubic']
+        assert spline_type in ['cubic', 'spherical', 'spherical_cubic', 'spherical_linear']
         self.spline_type = spline_type
         self.spline = None 
 
@@ -123,6 +126,11 @@ class Spline():
             if order == 2:
                 # In the bvp implementation, its only the projection of such the acceleration on the tangent direction
                 return self.dd_slerp_cubic(t)
+    
+    class finite_difference_spline(spherical_spline):
+        def __init__(self, t, x) -> None:
+            super().__init__(t, x)
+            
 
     def fit_spline(self, t, x):
         if self.spline_type == 'cubic':
