@@ -4,7 +4,7 @@ Offical implementation for "Probability Density Geodesics in Image Diffusion Lat
 [![Video](https://www.youtube.com/watch?v=r65VFu1sa2E)](#) -->
 <p align="center">
   <a href='https://arxiv.org/pdf/2504.06675'>
-  <img src='https://img.shields.io/badge/Arxiv-2502.01051-A42C25?style=flat&logo=arXiv&logoColor=A42C25'></a> 
+  <img src='https://img.shields.io/badge/Arxiv-2504.06675-A42C25?style=flat&logo=arXiv&logoColor=A42C25'></a> 
   <a href='https://www.youtube.com/watch?v=r65VFu1sa2E)'>
   <img src="https://img.shields.io/badge/YouTube-Video-red?logo=youtube"></a> 
 </p>
