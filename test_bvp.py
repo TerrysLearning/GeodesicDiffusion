@@ -21,7 +21,6 @@ if __name__ == '__main__':
         shutil.rmtree(out_dir)
     os.mkdir(out_dir)
     shutil.copy(args.config_file, out_dir)
-    
 
     imgA = Image.open(config_bvp['pathA'])
     imgB = Image.open(config_bvp['pathB'])

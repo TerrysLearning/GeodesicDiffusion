@@ -100,6 +100,7 @@ class Geodesic_BVP(Score_Distillation,
         pointA = latA.reshape(-1)
         pointB = latB.reshape(-1)
         if self.sphere_constraint:
+            # the radius is the average norm of the two points
             self.radius = 0.5 * (torch.norm(pointA) + torch.norm(pointB))
             pointA = norm_fix(pointA, self.radius)
             pointB = norm_fix(pointB, self.radius)
@@ -140,6 +141,7 @@ class Geodesic_BVP(Score_Distillation,
         if t_opt is None:
             return True # means the optimisation finished, strength to max
         t_opt = t_opt.to(self.device)
+        # get the control points location, velocity and acceleration
         X_opt = self.spline(t_opt)
         V_opt = self.spline(t_opt, 1)
         A_opt = self.spline(t_opt, 2)
