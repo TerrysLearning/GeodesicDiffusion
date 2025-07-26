@@ -13,8 +13,11 @@ if __name__ == '__main__':
 
     config_bvp = yaml.safe_load(open(args.c))
     
-    if not os.path.exists('results'):
-        os.mkdir('results/')
+    os.makedirs(config_bvp['output_args']['out_dir'], exist_ok=True)
+    config_bvp['output_args']['out_dir'] = os.path.join(config_bvp['output_args']['out_dir'], config_bvp['test_name'])
+
+    os.makedirs(config_bvp['tv_args']['tv_ckpt_folder'], exist_ok=True)
+    config_bvp['tv_args']['tv_ckpt_folder'] = os.path.join(config_bvp['tv_args']['tv_ckpt_folder'], config_bvp['test_name'])
 
     out_dir = config_bvp['output_args']['out_dir']
     if os.path.exists(out_dir):

@@ -1,12 +1,10 @@
 # GeodesicDiffusion
 Offical implementation for "Probability Density Geodesics in Image Diffusion Latent Space" (CVPR2025)
 
-## ToDo
-Add more instructions
-
+## Introduction
+to add 
 
 ## Test the code
-
 Create the environment
 ```bash
 conda create -n geodesicdiff python=3.12.4
@@ -19,3 +17,6 @@ To run the main script, use:
 python test_bvp.py --c configs/config_example.yaml
 ```
 
+## ToDo 
+add the geodesic analysis file
+add the ivp test file

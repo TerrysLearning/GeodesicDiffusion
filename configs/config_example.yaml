@@ -8,7 +8,7 @@ grad_args:
 output_args:
   cfg_sample: 1
   eta: 0.0
-  out_dir: 'results/female2male'
+  out_dir: 'results/'
   output_psample: True
   output_image_num: 17
   output_start_images: False
@@ -27,17 +27,18 @@ opt_args:
   iter_num: 400
   lr_scheduler: 'linear'
   lr_divide: True
-tv_args:
+tv_args: # text inversion checkpoint folder
   tv_lr: 0.005
   tv_steps: 500
   tv_batch_size: 2 
-  tv_ckpt_folder: 'tv_ckpt_sd2-1'
-noise_level: 0.7
+  tv_ckpt_folder: 'tv_ckpt_sd2-1/'
+noise_level: 0.6
 use_lerp_cond: True
 alpha: 0.002
 sphere_constraint: True
 grad_analysis_out: True 
-promptA: 'a beautiful woman'
-promptB: 'a handsome man'
-pathA: 'assets/fm25_0.png'
-pathB: 'assets/m25_1.png'
+test_name: 'dog2dog'
+promptA: 'a cute dog'
+promptB: 'a cute dog'
+pathA: 'assets/dog17_0.png'
+pathB: 'assets/dog17_1.png'
