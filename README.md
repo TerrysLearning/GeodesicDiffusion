@@ -4,7 +4,7 @@ Offical implementation for "Probability Density Geodesics in Image Diffusion Lat
 ## Test the code
 
 ```bash
-conda create -n geodesicdiff python=3.10
+conda create -n geodesicdiff python=3.12.4
 conda activate geodesicdiff
 ```
 
