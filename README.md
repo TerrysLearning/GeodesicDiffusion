@@ -1,5 +1,5 @@
 <h1 align='center'>
-  Probability Density Geodesics <br> in Image Diffusion Latent Space (CVPR2025)
+  Probability Density Geodesics <br> in Image Diffusion Latent Space
 </h1>
 
 <p align="center">
