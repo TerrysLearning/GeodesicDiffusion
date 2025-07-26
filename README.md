@@ -1,4 +1,4 @@
-# Probability Density Geodesics in Image Diffusion Latent Space (CVPR2025)
+## Probability Density Geodesics in Image Diffusion Latent Space (CVPR2025)
 
 <p align="center">
   <a href='https://arxiv.org/pdf/2504.06675'>
@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/YouTube-Video-red?logo=youtube"></a> 
 </p>
 
-## Test the code
+### Test the code
 Create the environment
 ```bash
 conda create -n geodesicdiff python=3.12.4
@@ -20,11 +20,11 @@ To run the main script, use:
 python test_bvp.py --c configs/config_example.yaml
 ```
 
-## ToDo 
+### ToDo 
 add the geodesic analysis file
 add the ivp test file
 
-## Introduction
+### Introduction
 
 This project explores an interesting idea: using an image generation model to create short videos. 
 
