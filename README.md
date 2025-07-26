@@ -1,4 +1,5 @@
-# GeodesicDiffusion
+# Probability Density Geodesics in Image Diffusion Latent Space
+
 <p align="center">
   <a href='https://arxiv.org/pdf/2504.06675'>
   <img src='https://img.shields.io/badge/Arxiv-2504.06675-A42C25?style=flat&logo=arXiv&logoColor=A42C25'></a> 
