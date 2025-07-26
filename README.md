@@ -1,4 +1,4 @@
-# Probability Density Geodesics in Image Diffusion Latent Space
+# Probability Density Geodesics in Image Diffusion Latent Space (CVPR2025)
 
 <p align="center">
   <a href='https://arxiv.org/pdf/2504.06675'>
@@ -6,7 +6,6 @@
   <a href='https://www.youtube.com/watch?v=r65VFu1sa2E)'>
   <img src="https://img.shields.io/badge/YouTube-Video-red?logo=youtube"></a> 
 </p>
-Offical implementation for "Probability Density Geodesics in Image Diffusion Latent Space" (CVPR2025)
 
 ## Test the code
 Create the environment
